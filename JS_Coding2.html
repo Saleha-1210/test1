@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div>
+	<center>
+		<form name="click">
+		<table>
+			<tr>
+				<td>John Score1::</td>
+				<td><input type="text" name="js1"></td>
+			</tr>
+			<tr>
+				<td>John Score2::</td>
+				<td><input type="text" name="js2"></td>
+			</tr>
+			<tr>
+				<td>John Score3::</td>
+				<td><input type="text" name="js3"></td>
+			</tr>
+			<tr>
+				<td>Mike Score1::</td>
+				<td><input type="text" name="ms1"></td>
+			</tr>
+			<tr>
+				<td>Mike Score2::</td>
+				<td><input type="text" name="ms2"></td>
+			</tr>
+			<tr>
+				<td>Mike Score3::</td>
+				<td><input type="text" name="ms3"></td>
+			</tr>
+			
+			<tr>
+				<td>MArry Score1:</td>
+				<td><input type="text" name="rs1" id="rs1"></td>
+			</tr>
+			<tr>
+				<td>MArry Score2:</td>
+				<td><input type="text" name="rs2" id="rs2"></td>
+			</tr>
+			<tr>
+				<td>MArry Score3:</td>
+				<td><input type="text" name="rs3" id="rs3"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="button" value="Find Two Average!!" onclick="Average()"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="button" value="Find Three Average!!" onclick="Average2()"></td>
+			</tr>
+		</table>
+		</form>
+	</center>
+</div>
+<script type="text/javascript">
+	function Average() {
+		// body...
+		var js1=document.forms['click']['js1'].value;
+		var js2=document.forms['click']['js2'].value;
+		var js3=document.forms['click']['js3'].value;
+
+		var ms1=document.forms['click']['ms1'].value;
+		var ms2=document.forms['click']['ms2'].value;
+		var ms3=document.forms['click']['ms3'].value;
+
+		
+		var a=parseInt(js1);
+		var b=parseInt(js2);
+		var c=parseInt(js3);
+
+		var d=parseInt(ms1);
+		var e=parseInt(ms2);
+		var f=parseInt(ms3);
+
+		avg_j=(a+b+c)/3;
+		avg_m=(d+e+f)/3;
+		
+
+		if (avg_j > avg_m) {
+			alert("John Is Win");
+			/*console.log("Average Of John",avg_j);
+			console.log("Average of Mark",avg_m);
+			console.log("John Average Is Larger Then Mark",avg_j);*/
+		}
+		else if (avg_j < avg_m){
+			alert("Mark Is Win");
+			/*onsole.log("Average Of John"+avg_j);
+			console.log("Average of Mark"+avg_m);
+			console.log("John Average Is Larger Then Mark",avg_j);
+			console.log("Mark Average Is Larger Then John",avg_m);*/
+		}
+		else{
+			alert("Drawww!!");
+			/*console.log("Average Of John",avg_j);
+			console.log("Average of Mark",avg_m);
+			console.log("John Average Is Larger Then Mark",avg_j);
+			console.log("Both Are Equal");*/
+		}
+		
+		
+
+	}
+
+	function Average2() {
+		// body...
+
+		var js1=document.forms['click']['js1'].value;
+		var js2=document.forms['click']['js2'].value;
+		var js3=document.forms['click']['js3'].value;
+
+		var ms1=document.forms['click']['ms1'].value;
+		var ms2=document.forms['click']['ms2'].value;
+		var ms3=document.forms['click']['ms3'].value;
+
+		var rs1=document.forms['click']['rs1'].value;
+		var rs2=document.forms['click']['rs2'].value;
+		var rs3=document.forms['click']['rs3'].value;
+
+		
+		var a=parseInt(js1);
+		var b=parseInt(js2);
+		var c=parseInt(js3);
+
+		var d=parseInt(ms1);
+		var e=parseInt(ms2);
+		var f=parseInt(ms3);
+
+		var g=parseInt(rs1);
+		var h=parseInt(rs2);
+		var i=parseInt(rs3);
+
+		avg_j=(a+b+c)/3;
+		avg_m=(d+e+f)/3;
+		avg_r=(g+h+i)/3;
+		
+
+		if ((avg_j > avg_m) && (avg_j > avg_r)) {
+			alert("John Is Win");
+			/*console.log("Average Of John",avg_j);
+			console.log("Average of Mark",avg_m);
+			console.log("John Average Is Larger Then Mark",avg_j);*/
+		}
+		else if ((avg_j < avg_m) && (avg_r < avg_m)){
+			alert("Mark Is Win");
+			/*onsole.log("Average Of John"+avg_j);
+			console.log("Average of Mark"+avg_m);
+			console.log("John Average Is Larger Then Mark",avg_j);
+			console.log("Mark Average Is Larger Then John",avg_m);*/
+		}
+		else if ((avg_r > avg_j) && (avg_r > avg_m)){
+			alert("Marry Win");
+			/*console.log("Average Of John",avg_j);
+			console.log("Average of Mark",avg_m);
+			console.log("John Average Is Larger Then Mark",avg_j);
+			console.log("Both Are Equal");*/
+		}
+		else{
+			alert("Drawww");
+		}
+		
+		
+
+	}
+	
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+table,th,td,tr
+		{	
+			border-collapse:collapse;
+			border: 2px solid black;
+			margin-top:10%;
+			text-align:center;
+		}
+	

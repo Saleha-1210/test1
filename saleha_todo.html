@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  
+  
+  
+    <title>Simple To Do List</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  
+</head>
+<body>
+    <center>
+    <div class="container">
+        <div id="newtask" style="background-color: lightpink">
+            <input style="padding: 20px" type="text" id="textbox" placeholder="Task to be done..">
+            <button id="push">Add</button>
+        </div>
+        <div id="tasks"></div>
+    </div>
+    <!--Script-->
+    <script type="text/javascript">
+document.querySelector('#push').onclick = function(){
+    if(document.querySelector('#newtask input').value == length){
+        alert("Please Enter a Task")
+    }
+    else{
+        document.querySelector('#tasks').innerHTML += `
+            <div class="task" style="background-color:lightblue">
+                <span id="taskname">
+                    ${document.querySelector('#newtask input').value}
+
+                </span>
+                <button class="delete">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+        `;
+
+        var current_tasks = document.querySelectorAll(".delete");
+        for(var i=0; i<current_tasks.length; i++){
+            current_tasks[i].onclick = function(){
+                this.parentNode.remove();
+            }
+        }
+
+    }
+   document.getElementById("textbox").value="";
+}
+    </script>
+</center>
+</body>
+</html> 
+
+

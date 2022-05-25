@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice_8</title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="practice6_css.css">
+	<div class="info">
+	<form  name="details" action="Display.html">
+	<div>
+		<center>
+				<h3>Personal Information</h3>
+				<table class="pinfo">
+					<tr>
+						<td>First Name:</td>
+						<td><input type="text" name="fname" id="fname" required></td>
+					</tr>
+					<tr>
+						<td>Last Name:</td>
+						<td><input type="text" name="lname" id="lname" required></td>
+					</tr>
+					<tr>
+						<td>Date Of Birth:</td>
+						<td><input type="date" name="dob" id="dob" required></td>
+					</tr>
+					<tr>
+						<td>Gender:</td>
+						<td><select name="gender">
+							<option>Male</option>
+							<option>Female</option>
+							<option>Other</option>
+						</select></td>
+					</tr>
+				</table>
+		</center>
+	</div>
+	<div>
+		<center>
+				<h3>Account Information</h3>
+				<table class="ainfo">
+					<tr>
+						<td>Email:</td>
+						<td><input type="Email" name="email" id="email" required></td>
+					</tr>
+					<tr>
+						<td>Re-Type Email:</td>
+						<td><input type="Email" name="email" id="email" required></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type="Password" name="Password" id="Password" required></td>
+					</tr>
+					<tr>
+						<td>Re-Type Password:</td>
+						<td><input type="Password" name="Password" id="Password" required></td>
+					</tr>
+					<tr>
+						<td>Security Question:</td>
+						<td>
+							<select name="sque">
+								<option>School Name?</option>
+								<option>Favourite Place?</option>
+								<option>Nick Nmae?</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Security Answer:</td>
+						<td><input type="text" name="sans" id="sans"></td>
+					</tr>
+					<!-- <tr>
+						<td id="spanid1"><span>(NO Case Sensitive)</span></td>
+					</tr> -->
+				</table>
+		</center>
+	</div>
+	<div>
+		<center>
+				<h3>Contact Information</h3>
+				<table class="cinfo">
+					<tr>
+						<td>Address:</td>
+						<td><textarea id="address" name="address"></textarea></td>
+					</tr>
+					<tr>
+						<td>City:</td>
+						<td><input type="text" name="city" id="city"></td>
+					</tr>
+					<tr>
+						<td>State:</td>
+						<td><select class="idstate" name="state">
+							<option>Gujrat</option>
+							<option>UP</option>
+							<option>MP</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>ZipCode:</td>
+						<td><input type="text" name="pcode" id="pcode"></td>
+					</tr>
+					<tr>
+						<td>PhoneNo:</td>
+						<td><input type="text" name="pno" id="pno" required></td>
+						<td><select class="idno">
+								<option>Mobile</option>
+								<option>LandLine</option>
+							</select></td>
+					</tr>
+				</table>
+		</center>
+	</div>
+	<input type="submit" name="submit" value="Submit" id="submit" onclick="transfer_data()">
+	<input type="reset" name="reset" value="Reset" id="reset">
+</form>
+	</div>
+<script type="text/javascript">
+	function transfer_data() {
+		// body...
+		var fname=document.getElementById("fname").value;
+		var lname=document.getElementById("lname").value;
+		var email=document.getElementById("email").value;
+		localStorage.setItem("firstname",fname);
+		localStorage.setItem("lastname",lname);
+		localStorage.setItem("email",email);
+	}
+</script>
+</body>
+</html>

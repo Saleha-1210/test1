@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<center>
+			<form name="click">
+				<table>
+					<tr>
+						<td>Biil of First Restorant:</td>
+						<td><input type="text" name="bill1" id="b1"></td>
+					</tr>
+					<tr>
+						<td>Biil of Second Restorant:</td>
+						<td><input type="text" name="bill2" id="b2"></td>
+					</tr>
+					<tr>
+						<td>Biil of Third Restorant:</td>
+						<td><input type="text" name="bill3" id="b3"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="calculate" onclick="tip_calculate()"></td>
+					</tr>
+				</table>
+			</form>
+		</center>
+	</div>
+	<script type="text/javascript">
+		function tip_calculate() {
+			// body...
+			var amt1=document.getElementById("b1").value;
+			var amt2=document.getElementById("b2").value;
+			var amt3=document.getElementById("b3").value;
+
+			var Amt1=parseInt(amt1);
+			var Amt2=parseInt(amt2);
+			var Amt3=parseInt(amt3);
+
+			var array1 = new Array(Amt1,Amt2,Amt3);
+			var array2 = [];
+			var array3 = [];
+			for (var i = 0; i < array1.length; i++) {
+				if(array1[i] < 50){
+					array2[i] = (array1[i]*20)/100;
+				}
+				else if((array1[i] < 200) && (array1[i]>50)){
+					array2[i] = (array1[i]*15)/100;
+				}
+				else{
+					array2[i] = (array1[i]*10)/100;
+				}
+			}
+			document.write("Tip Araay..");
+			for (var k = 0; k < array2.length; k++){
+				document.write("<br><br>"+array2[k]);
+			}
+
+			array3[0] = array1[0] + array2[0];
+			array3[1] = array1[1] + array2[1];
+			array3[2] = array1[2] + array2[2];
+
+			document.write("<br>Total Bill Araay..");
+
+			for ( var k = 0; k < array3.length; k++){
+				document.write("<br><br>"+array3[k]);
+			}
+		}
+	</script>
+</body>
+</html>

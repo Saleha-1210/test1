@@ -1,0 +1,46 @@
+h3{
+	margin-left: -10%;
+}
+.ainfo{
+	margin-left: 3%;
+}
+.cinfo{
+	margin-left: 5%;
+}
+input{
+	margin-left: 30%;
+}
+.cinfo input,select,textarea{
+	margin-left: 60%;
+}
+.ainfo select{
+	margin-left: 30%
+}
+.pinfo input,date,select{
+	margin-left: 50%;
+}
+.idstate{
+	margin-left: 60%;
+}
+.idno{
+	margin-left: 150%;
+}
+
+.info{
+	border: solid;
+	padding: 10px;
+}
+#submit{
+	margin-left: 55%;
+}
+#reset{
+	padding: 10px;
+	margin-left: 35%;
+}
+#submit{
+	padding: 10px;
+	margin-left: 35%;
+}
+#spanid1{
+	font-size: 13px;
+}

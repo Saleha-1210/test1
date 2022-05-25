@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="ptag">BMI Of John::</p>
+	<p id="ptag2">BMI Of Mark::</p>
+	<script type="text/javascript">
+		let john={
+			firstname:"John",
+			mass:50,
+			height: 5,
+
+			j_calc: function () {
+				// body...
+				var bmi = (this.mass/(this.height*this.height));
+				return bmi;
+			}
+
+		};
+		
+		
+		let mark={
+			firstname:"Mark",
+			mass:50,
+			height:5,
+
+			m_calc: function () {
+				// body...
+				var bmi = (this.mass/(this.height*this.height));
+				return bmi;
+			}
+
+		};
+		document.getElementById("ptag").innerHTML += john.j_calc();
+		document.getElementById("ptag2").innerHTML += mark.m_calc();
+
+		if(john.j_calc() > mark.m_calc()){
+			console.log(john.firstname+" Has Higesht BMI :: "+john.j_calc());
+		}
+		else if(john.j_calc() < mark.m_calc()){
+			console.log(mark.firstname+" Has Higesht BMI :: "+mark.m_calc());
+		}
+		else
+		{
+			console.log("Drawwww!!!!!");
+		}
+	</script>
+</body>
+</html>

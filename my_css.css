@@ -1,0 +1,15 @@
+.first{
+	float: left;
+	padding: 20px;
+	margin-left: 2%;
+	box-shadow: 0 0 5px rgba(0,0,0,0.250);
+	border-radius: 25px;
+
+}
+.demo{
+	padding-left: 170px;
+	padding-top:  90px;
+}
+.tip{
+	margin-top: 2%;
+}

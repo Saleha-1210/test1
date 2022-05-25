@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+	<form name="check">
+		<table>
+			<tr>
+				<td>MassOfJohn::</td>
+				<td><input type="text" name="massofjohn" id="johnmass"></td>
+			</tr>
+			<tr>
+				<td>HeightOfJohn::</td>
+				<td><input type="text" name="HeightOfJohn" id="johnheight"></td>
+			</tr>
+			<tr>
+				<td>MassOfMark::</td>
+				<td><input type="text" name="MassOfMark" id="markmass"></td>
+			</tr>
+			<tr>
+				<td>HeightOfMark::</td>
+				<td><input type="text" name="HeightOfMark" id="markheight"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="Click!!" value="clcik" onclick="CheckBMI()"><td>
+			</tr>
+
+		</table>
+	</form>
+	</center>
+	<script type="text/javascript">
+	function CheckBMI() {
+		// body...
+		var Jmass=document.forms['check']['massofjohn'].value;
+		var Jheight=document.forms['check']['HeightOfJohn'].value;
+		var Mmass=document.forms['check']['MassOfMark'].value;
+		var MHeight=document.forms['check']['HeightOfMark'].value;
+
+		var BMI_Of_John= Jmass/(Jheight*Jheight);
+		var BMI_Of_Mark= Mmass/(MHeight*MHeight);
+		
+		var answer=Boolean(BMI_Of_John<BMI_Of_Mark);
+		/*alert("Is Marks's BMI Is Heigher Than John's?"+answer);*/
+		console.log("Is Marks's BMI Is Heigher Than John's?" ,answer);
+
+
+
+	}
+</script>
+</body>
+
+</html>

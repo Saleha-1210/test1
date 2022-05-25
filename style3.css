@@ -1,0 +1,19 @@
+.head{
+	margin-top:7%;
+}
+
+table{
+			border: none;;
+			border-collapse: separate;
+			border-spacing: 15px;
+			text-align:center;
+			/* border-collapse:collapse; */
+}
+td{
+	
+	
+	border: 2px solid gray;
+	
+	text-align:center;
+	
+}

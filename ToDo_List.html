@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo List</title>
+</head>
+<body>
+	<div>
+		<center>
+			<form>
+				<table>
+					<tr>
+						<td>Enter The Task::</td>
+						<td><input type="text" name="todolist" id="todo"></td>
+						<td><span><button type="button" onclick="add_task()">Add</button></span></td>
+
+					</tr>
+					<tr>
+						<td><ul><li id="list"></li></ul></td>
+						<td><span><button type="button" onclick="delete_element()" >Delete</button></span></td>
+					</tr>
+				</table>
+			</form>
+		</center>
+	</div>
+
+	<script type="text/javascript">
+		const arrtask =[];
+		function add_task(){
+			/*localStorage.setItem("0",document.getElementById("todo").value);*/
+			arrtask.push(document.getElementById("todo").value);
+		 	displayingrid();
+		 	
+		}
+		function displayingrid(){
+				var text =document.getElementById("todo").value;
+				console.log(text);
+				/*document.getElementById("print").innerHTML += arrtask[i];*/
+				/*alert(arrtask[i]);*/
+				var parElement = document.getElementById("list");
+				var textToAdd = document.createTextNode(text);
+				parElement.appendChild(textToAdd);
+				document.getElementById("todo");
+			
+			
+		}
+		function delete_element(){
+
+		}
+
+		/*localStorage.setItem("0",document.getElementById("todo").value);
+		alert(localStorage.getItem("0"));*/
+		/*var arrtask = [];
+		var text = document.getElementById("todo").value;
+		function add_task() {
+			// body...
+			arrtask.push(text);
+		}
+		for ( var i =0; i < arrtask.length ; i++ ){
+			alert(arrtask[i]);
+		}*/
+	</script>
+</body>
+
+</html>
