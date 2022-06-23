@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>Promise_Async_Await</title>
+    <head></head>
+    <body>
+        <center>
+            <table>
+                <tr>
+                    <td><input type="button" id="click" onclick="addwater()" value="Let's Make Tea"></td>
+                </tr>
+            </table>
+        </center>
+
+        <script type="text/javascript">
+           async function addwater(){
+               console.log("Add Some Water....");
+                const text1 = await addtealeafes();
+                console.log(text1);
+                const text2 = await addmilk();
+                console.log(text2);
+            }
+            function addtealeafes(){
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        console.log("Inside Time Out");
+                        resolve("Add Tea Leafes..");
+                    },2000);
+                })
+            }
+            function addmilk(){
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        console.log("Inside Time Out Again");
+                        resolve("Add Milk....");
+                    },3000);
+                })
+            }
+        </script>
+    </body>
+</html>

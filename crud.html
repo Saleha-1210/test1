@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <title>CRUD APPLICATION</title>
+    <head></head>
+    <body>
+        <center>
+            <form>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="name" placeholder="Enter A Name"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" id="email" placeholder="Enter A Email"></td>
+                </tr>
+                <tr>
+                    <td>Contact NUmber:</td>
+                    <td><input type="text" id="cno" placeholder="Enter A Contact Number"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" id="submit" value="SUBMIT" onclick="saveDataToLS()"> </td>
+                </tr>
+                
+                <tr>
+                    <td><ul>
+                        <li id ="list"></li>
+                    </ul></td>
+                </tr>
+            </table>
+            </form>
+        </center>
+        <script type="text/javascript">
+            var array = [];
+            function saveDataToLS(){
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var cno = document.getElementById("cno").value;
+                     const person={
+                        "name" : name,
+                        "email" : email,
+                        "contactNumber" : cno
+                    }
+                   //localStorage.setItem("data",JSON.stringify(person));
+                   //var object = localStorage.getItem("data");
+                   //var retrivedObject = JSON.parse(object);
+                   //array.push(retrivedObject);
+                   //console.log(array[(array.length)-1]);
+
+                   array.push(person);
+                   localStorage.setItem("data",JSON.stringify(array));
+                   console.log(array[(array.length)-1]);
+                   document.getElementById("list").innerHTML = ("hii");
+                    
+                   
+                }
+                //function displayDetails(){
+                    //document.getElementById("list").innerHTML = (array[0].person.name);
+                //}
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Tea Making
+    </title>
+    <hrad></hrad>
+    <body>
+        <center>
+            <table>
+                <tr>
+                    <td><input type="button" id="tea" value="Let's Make Tea" onclick="addwater()"></td>
+                </tr>
+            </table>
+        </center>
+        <script type="text/javascript">
+            function addwater(){
+                console.log("Please Add Water..");
+                setTimeout(addtealeafes,2000);
+            
+            }
+            function addtealeafes() {
+                console.log("Please Add Tea Leafes");
+                setTimeout(addmilk,3000);
+                
+            }
+            function addmilk(){
+                console.log("Please Add Water");
+            }
+        </script>
+    </body>
+</html>

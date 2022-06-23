@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <title>Products</title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="cssProduct.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body background="">
+        <!-- <input type="button" value="Click" onclick="display()" id="click"> -->
+        <!-- <p id="one"></p>
+        <p id="two"></p>
+        <image id="three" src="" width="100" height="100"></image> -->
+         <center id="cen"> 
+            <div style="border: 1px solid black; height: 40px;"><i class="fa fa-shopping-cart" id="carticon"></i></div>
+            <div id="prod"></div>
+            
+            
+         </center> 
+
+        <script>
+            var products = [
+                {
+                    "productname" : "Ketchup",
+                    "price": 70,
+                    "image": "ketchup.jpg"
+                },
+                {
+                    "productname" : "Wafers",
+                    "price": 70,
+                    "image": "wafers.jpg"
+                },
+                {
+                    "productname" : "Real Juice",
+                    "price": 70,
+                    "image": "rjuice.jpg"
+                }
+              
+            ];
+            localStorage.setItem("products",JSON.stringify(products));
+            //function display(){
+                var object = localStorage.getItem("products");
+                if(object){
+                    var object = JSON.parse(object);
+                    
+                    for( var i=0;i<object.length;i++){
+                        var div = document.createElement('div');
+                        div.id = "product";
+                        var img = document.createElement('img');
+                        img.id = "pimg";
+                        img.src = object[i].image;
+                        img.height = "90";
+                        img.width = "90";
+                        
+
+                        var ptag = document.createElement('p');
+                        ptag.id = "pname";
+                        ptag.innerHTML = object[i].productname;
+
+                        var ptag1 = document.createElement('p');
+                        ptag1.id = "pprice";
+                        ptag1.innerHTML = "Rs."+object[i].price;
+
+                        
+                        
+                        var val = document.createElement('input');
+                        val.id = i;
+                        val.value = "0";
+                        val.style.width = "15px";
+                        val.style.borderColor = "white";
+                        val.style.textAlign = "center";
+                        val.readOnly = true;
+                        const id = val.id;
+                        
+                        var max = document.createElement("button");
+                        max.id = "plus";
+                        max.innerHTML ="+";
+                        max.addEventListener('click',()=>{
+                             plus(id);
+                        });
+                        
+                        var min = document.createElement("button");
+                        min.id = "minus";
+                        min.innerHTML ="-";
+                        min.addEventListener('click',()=>{
+                            minus(id);
+                        });
+                        div.append(img,ptag,ptag1,min,val,max);
+                        document.getElementById("prod").append(div);
+
+                    }
+                     var btn =  document.createElement('button');
+                     btn.id = "cart";
+                     btn.innerHTML = "Add To Cart";
+                     btn.addEventListener('click',()=>{
+                             addToCart();
+                     });
+                     document.getElementById("prod").append(btn);
+
+                }
+                function minus(id){
+                    
+                    var object = localStorage.getItem("products");
+                    if(object){
+                        var object = JSON.parse(object);
+                    }    
+                         for(var i = 0;i<object.length;i++){
+                             if(i==id){
+                                 var num = document.getElementById(i).value;
+                                 var no = parseInt(num);
+                                 var ans = no -1;
+                                 if(ans < 0){
+                                    ans = 0;
+                                 }
+                                 document.getElementById(i).value = ans;
+                                 break;
+                             }
+                             
+                        }
+
+                }
+                function plus(id){
+                    var object = localStorage.getItem("products");
+                    if(object){
+                        var object = JSON.parse(object);
+                    }
+                    for( var i =0;i<object.length;i++){
+                        if(i==id){
+                        var num = document.getElementById(i).value;
+                        var no = parseInt(num);
+                        var ans = no +1;
+                        document.getElementById(i).value = ans;
+                        break;
+                    }
+                }    
+                    
+                }
+                    
+                    
+                
+                function addToCart(){
+                    alert("hello");
+                     var cart = [];
+
+                     var object = localStorage.getItem("products");
+                     if(object){
+                         var object = JSON.parse(object);
+                         for(var i =0 ;i<object.length;i++){
+                             var list ={
+                                 "productName" : object[i].productname,
+                                 "price" : object[i].price,
+                                 "image" : object[i].image,
+                                 "qty" : document.getElementById(i).value
+
+                             }
+                             cart.push(list);
+                             localStorage.setItem("Cart",JSON.stringify(cart));
+                         }
+
+                         
+                    }
+                    
+                }
+
+            //}
+            
+
+        </script>
+    </body>
+</html>
